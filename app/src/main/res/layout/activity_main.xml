@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:layout_gravity="bottom"
+>
+
+    <com.yuriandgleb.project.CanvasView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <Button
+            android:text="ЯБАТЬ МЕНЯ СКРУТИЛО"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" android:id="@+id/button2" android:layout_marginTop="-50dp"
+            android:rotationY="-40" android:rotation="-11"/>
+    <Button
+            android:text="Да, миша, я ХУЙ!!!"
+            android:layout_width="match_parent" android:layout_gravity="bottom"
+            android:layout_height="50dp" android:id="@+id/button" android:layout_marginStart="200dp"
+            android:layout_marginTop="-50dp"/>
+
+</LinearLayout>
