@@ -13,11 +13,14 @@ class CanvasView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val paint = Paint()
-        //val pic = BitmapFactory.decodeResource(resources,R.drawable.sinthtulo)
-        canvas.drawLine(0f,0f,300f,500f,paint)
-        //canvas.drawCircle(500f,200f,250f,paint)
-        //canvas.drawBitmap(pic,matrix,paint)
-        //canvas.drawText("Юра хуй", 200f,200f,paint)
-    }
+        val pic = BitmapFactory.decodeResource(resources,R.drawable.sinthtulo)
 
+        canvas.drawLine(0f,0f,300f,500f,paint)
+        canvas.drawCircle(500f,200f,250f,paint)
+
+        canvas.drawBitmap(pic,matrix,paint)
+
+        canvas.drawText("Юра хуй", 200f,200f,paint)
+    }
+    
 }
