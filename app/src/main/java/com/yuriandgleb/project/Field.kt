@@ -15,6 +15,7 @@ var CellCoords = Array(10) {Array(10) {Cell(false,false,false)} }
 var setup = false
 var path = Array(34) {IntArray(2) }
 fun initialsetup(){
+// ГОВНОКОД ON
     path[0] = intArrayOf(1,0)
     path[1] = intArrayOf(1,1)
     path[2] = intArrayOf(1,2)
@@ -139,7 +140,8 @@ fun initialsetup(){
         CellCoords[9][7].isWall=true
         CellCoords[9][8].isWall=true
         CellCoords[9][9].isWall=true
-
+// ГОВНОКОД OFF
+// если у тебя есть идеи получше, предлагай) 
 
         setup = true
     }}
@@ -152,7 +154,7 @@ fun DrawMeAMonter(CellCoords: Array<Array<Cell>>, canvas: Canvas,paint: Paint){
         for (j in 0..9) {
             if (CellCoords[i][j].isMonster) {
                 //paint.setColor(1070108000)
-
+// рисует монстра
                 paint.setColor(1001001000)
                 canvas.drawText(
                     a.hp.toString(),
@@ -166,6 +168,7 @@ fun DrawMeAMonter(CellCoords: Array<Array<Cell>>, canvas: Canvas,paint: Paint){
         }
     }
 }
+// рисует всё кроме монстров по идее
 fun MisterSandmanBringMeAField(CellCoords : Array<Array<Cell>>, canvas: Canvas, paint: Paint){
 /*
 Mr. Sandman, bring me a field
@@ -219,9 +222,11 @@ class Cell (var isTower: Boolean, var isMonster: Boolean,var isWall : Boolean){
 class Monster(var hp:Int = basehp, var apath:Int = 0, var dmg:Int) {
     fun walk(){
         if (CellCoords[path[apath][0]][path[apath][1]].isMonster == true && apath ==0){
-
+// нихуя не делать чтоб не перепрыгивал
         }
         else{
+// а тут ходим
+// просто обновляем данные, и draw me a monster справится с остальным
             CellCoords[path[apath][0]][path[apath][1]].isMonster = false
             apath = apath + 1
             CellCoords[path[apath][0]][path[apath][1]].isMonster = true
@@ -233,6 +238,7 @@ class Monster(var hp:Int = basehp, var apath:Int = 0, var dmg:Int) {
 }
 var m = MainActivity()
 var btn : Boolean = false
+// я знаю как писать свой код лучше, чем линт
 @SuppressLint("DrawAllocation") //чтобы не было варнингов лишних
 class Field @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -245,13 +251,14 @@ class Field @JvmOverloads constructor(
         initialsetup()
 
 
+// основной цикл программы
+// надо как-то уметь оставить и подвязать к кнопке
         paint.setColor(color)
         //color-=20
         paint.style = Paint.Style.FILL_AND_STROKE
         MisterSandmanBringMeAField(CellCoords,canvas,paint)
         paint.style = Paint.Style.STROKE
         MisterSandmanBringMeAField(CellCoords,canvas,paint)
-
 
 
             DrawMeAMonter(CellCoords, canvas, paint)
