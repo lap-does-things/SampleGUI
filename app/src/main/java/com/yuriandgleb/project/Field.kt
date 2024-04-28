@@ -248,19 +248,16 @@ class Field @JvmOverloads constructor(
     public override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val paint = Paint()
+// объявляет поле как 2д массив Cell
         initialsetup()
-
-
-// основной цикл программы
-// надо как-то уметь оставить и подвязать к кнопке
         paint.setColor(color)
         //color-=20
-        paint.style = Paint.Style.FILL_AND_STROKE
-        MisterSandmanBringMeAField(CellCoords,canvas,paint)
-        paint.style = Paint.Style.STROKE
-        MisterSandmanBringMeAField(CellCoords,canvas,paint)
+// рисуем заливку и края клеток
+        paint.style = Paint.Style.FILL_AND_STROKE        MisterSandmanBringMeAField(CellCoords,canvas,paint)
+        paint.style = Paint.Style.STROKE        MisterSandmanBringMeAField(CellCoords,canvas,paint)
 
-
+            // Основной цикл программы. 
+            // Его то и надо подвязать
             DrawMeAMonter(CellCoords, canvas, paint)
             a.walk()
             Thread.sleep(1000)
